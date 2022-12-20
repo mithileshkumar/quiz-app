@@ -2,5 +2,6 @@
 simple quiz app built in native javascript.
 
 Steps to run :
-- Download files from https://github.com/mithileshkumar/quiz-app
-- Open index.html page in browser
+- Download folder/repository from https://github.com/mithileshkumar/quiz-app and extract the contents.
+- Alternative to download is to clone the repository.
+- Open index.html page in browser.
