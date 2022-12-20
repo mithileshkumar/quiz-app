@@ -17,6 +17,7 @@ function restartQuiz() {
     document.getElementById('quiz-container').style.visibility = 'visible';
     document.getElementById('quiz-chance').textContent = chance;
     document.getElementById('quiz-score').textContent = score;
+    document.getElementById('quiz-question').textContent = '';
     fetchQuestions();
 }
 
@@ -41,19 +42,19 @@ function showQuestions() {
     } else {
         chance--;
     }
-    count++;
     document.getElementById('quiz-answer').value = '';
-    if (chance === 0) {
-        document.getElementById('quiz-restart').style.visibility = 'visible';
+    if (chance <= 0) {
         document.getElementById('quiz-container').style.visibility = 'hidden';
+        document.getElementById('quiz-restart').style.visibility = 'visible';
         document.getElementById('quiz-final').textContent = score;
-    }
-    if (count === questionStore.length - 1) {
-        fetchQuestions();
     } else {
+        count++;
         document.getElementById('quiz-score').textContent = score;
         document.getElementById('quiz-chance').textContent = chance;
         document.getElementById('quiz-question').textContent = questionStore[count].question;
+    }
+    if (count > questionStore.length - 1) {
+        fetchQuestions();
     }
 }
 
@@ -95,4 +96,3 @@ document.getElementById('quiz-button').addEventListener('click', showQuestions);
 document.getElementById('quiz-mode').addEventListener('click', toggleMode);
 document.getElementById('quiz-restart__button').addEventListener('click', restartQuiz);
 fetchQuestions();
-
