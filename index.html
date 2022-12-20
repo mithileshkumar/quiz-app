@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Quiz application to test your knowledge and have some fun.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Quiz">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='./script.js' defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha1/0.6.0/sha1.min.js" defer></script>
+    <link rel='stylesheet' href='./style.css' />
+    <title>Quiz application</title>
+</head>
+
+<body>
+    <header id='quiz-header'>
+        <h1 id='quiz-title'>Quiz</h1>
+        <button id='quiz-mode'>Toggle Mode</button>
+    </header>
+    <main id='quiz-container'>
+        <section id='quiz-container__qna'>
+            <h3 id='quiz-question'></h3>
+            <div id='quiz-inputs'>
+                <input id='quiz-answer' type='text' placeholder='Type your answer here' />
+                <button type='submit' id='quiz-button'>Submit</button>
+            </div>
+        </section>
+        <section id='quiz-container__stats'>
+            <h3 class='quiz-current'>Score : <span id='quiz-score'>0</span></h3>
+            <h3 class='quiz-current'>Chances left : <span id='quiz-chance'>3</span></h3>
+        </section>
+    </main>
+    <div id='quiz-restart'>
+        <h2>Your score : <span id='quiz-final'></span></h2>
+        <button id='quiz-restart__button'>Start a new game</button>
+    </div>
+    <p id='quiz-loading'></p>
+</body>
+
+</html>
